@@ -108,8 +108,9 @@ function stateListener(event){
       state = 'cued';
       break;
   }
+  console.log('Current url: ' + event.target.B.videoUrl);
   console.log('Current State: ' + state);
-  if(/*event.data == YT.PlayerState.ENDED ||*/ event.data == YT.PlayerState.PAUSED){
+  if(event.data == YT.PlayerState.PAUSED){
     video++;
     if(video > 8){
       video = 0;
